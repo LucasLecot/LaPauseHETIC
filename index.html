@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pause 5mins</title>
+    <style>
+        p {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<p id="countdown"></p>
+
+<script>
+
+
+var countDownDate = new Date();
+var counDownMins = countDownDate.getMinutes();
+var x = setInterval(function() {
+
+    var now = new Date();
+    var fiveMins = 0;
+    fiveMins = fiveMins + 5;
+
+    if ((counDownMins + fiveMins) === now.getMinutes()) {
+        console.log("C'est la pause");
+        counDownMins = now.getMinutes();
+    }
+
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    document.querySelector("#countdown").innerHTML = hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+}, 1000);
+
+
+</script>
+
+</body>
+</html>
